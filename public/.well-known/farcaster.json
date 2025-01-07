@@ -1,0 +1,18 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjY1NDYsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyMWNBOUYwRjdDMGI1OWY2MTZiMUQ5NjMyNWQ1NUI2MmM5NjYxRDZkIn0",
+        "payload": "eyJkb21haW4iOiJwaXNzcy5hcnRsdS54eXoifQ",
+        "signature": "MHhlOWE2MGVmYjU3NGZjYjkzM2JkZTA4MTk3Mjc5M2EwNzY4OWE5NjkwNzhiN2JiN2EwZjg4NzRmODZjZDZkMGIzNzI0ZmZkODA5M2E2YTMxNjY0MTU2M2NmM2IyNzU1NzdkZDZlODY5Y2UyNTQxMGQ5ZWZkMDkyMmYzM2YxN2QxMzFj"
+    },
+        "frame": {
+        "version": "0.0.1",
+        "name": "pISSStream Frames v2",
+        "iconUrl": "https://pisss.artlu.xyz/icon.png",
+        "homeUrl": "https://pisss.artlu.xyz",
+        "imageUrl": "https://pisss.artlu.xyz/splash.png", 
+        "buttonTitle": "see ISS telemetry",
+        "splashImageUrl": "https://pisss.artlu.xyz/splash.png", 
+        "splashBackgroundColor": "#f7f7f7",
+        "webhookUrl": "https://pisss.artlu.xyz/api/webhook"
+    }
+}
