@@ -3,6 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import { ClientOnly } from "remix-utils/client-only";
 import LandingPage from "~/components/LandingPage.client";
 import PrivyWrapper from "~/components/PrivyWrapper.client";
+import SpaceZoom from "~/components/SpaceZoom.client";
 import config from "~/config.json";
 import { ogImageUrl } from "~/lib/og";
 import { getPissStream } from "~/lib/redis";
@@ -59,7 +60,9 @@ export default function Index() {
       <ClientOnly fallback={<div>Loading...</div>}>
         {() => (
           <PrivyWrapper>
-            <LandingPage val={val} />
+            <SpaceZoom>
+              <LandingPage val={val} />
+            </SpaceZoom>
           </PrivyWrapper>
         )}
       </ClientOnly>
