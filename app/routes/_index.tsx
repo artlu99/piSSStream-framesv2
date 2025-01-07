@@ -9,7 +9,7 @@ import { ogImageUrl } from "~/lib/og";
 import { getPissStream } from "~/lib/redis";
 
 export const meta: MetaFunction = () => {
-  const { val } = useLoaderData<typeof loader>();
+  const { val = 42 } = useLoaderData<typeof loader>();
 
   const appUrl = config.appUrl;
   const { title, description, name } = config.meta;
