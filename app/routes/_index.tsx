@@ -5,16 +5,18 @@ import LandingPage from "~/components/LandingPage.client";
 import PrivyWrapper from "~/components/PrivyWrapper.client";
 import config from "~/config.json";
 import { ogImageUrl } from "~/lib/og";
-import type { User } from "~/services/oauth.server";
-import { authSessionStorage } from "~/services/sessions.server";
+import { getPissStream } from "~/lib/redis";
 
 export const meta: MetaFunction = () => {
+  const { val } = useLoaderData<typeof loader>();
+
   const appUrl = config.appUrl;
   const { title, description, name } = config.meta;
 
   const frame = {
     version: "next",
-    imageUrl: config.dynamicOgImages ? ogImageUrl() : `${appUrl}/splash.png`,
+    imageUrl:
+      config.dynamicOgImages && val ? ogImageUrl(val) : `${appUrl}/splash.png`,
     button: {
       title: config.button.title,
       action: {
@@ -39,27 +41,25 @@ export const meta: MetaFunction = () => {
 };
 
 interface LoaderData {
-  user: User | null;
+  val?: number;
 }
 export async function loader({
   request,
+  context,
 }: LoaderFunctionArgs): Promise<LoaderData> {
-  const session = await authSessionStorage.getSession(
-    request.headers.get("cookie")
-  );
-  const user = session.get("user") as User | null;
-  return { user };
+  const val = await getPissStream(context.cloudflare.env);
+  return { val };
 }
 
 export default function Index() {
-  const { user } = useLoaderData<typeof loader>();
+  const { val } = useLoaderData<typeof loader>();
 
   return (
     <div className="w-[300px] mx-auto py-4 px-2">
       <ClientOnly fallback={<div>Loading...</div>}>
         {() => (
           <PrivyWrapper>
-            <LandingPage />
+            <LandingPage val={val} />
           </PrivyWrapper>
         )}
       </ClientOnly>

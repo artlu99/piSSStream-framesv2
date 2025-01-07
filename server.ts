@@ -5,8 +5,8 @@ import { poweredBy } from "hono/powered-by";
 import { staticAssets } from "remix-hono/cloudflare";
 import { remix } from "remix-hono/handler";
 import { z } from "zod";
-import { incrCount } from "~/lib/redis";
 import type { Env } from "~/type/env";
+import { getPissStream } from "./app/lib/redis";
 
 const app = new Hono<{ Bindings: Env }>();
 
@@ -23,13 +23,13 @@ const routes = app
 			return c.json({ My_var: c.env.MY_VAR });
 		},
 	)
-	.post("/count", zValidator("query", z.object({})), async (c) => {
+	.get("/pISSStream", zValidator("query", z.object({})), async (c) => {
 		try {
-			const count = await incrCount(c.env);
-			return c.json({ count });
+			const piss = await getPissStream(c.env) as number;
+			return c.json({ piss: piss });
 		} catch {
 			console.error("Redis error");
-			return c.json({ count: -1 });
+			return c.json({ piss: -1 });
 		}
 	});
 

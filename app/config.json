@@ -12,9 +12,9 @@
     "dynamicOgService": {
         "baseUrl": "https://frames-cached-dynamic-og.artlu.workers.dev/og" ,
         "params": {
-            "mainText": "62%",
-            "description": "🧑‍🚀🚽",
-            "footerText": "~ pISSStream",
+            "mainText": "🧑‍🚀🚽",
+            "description": " percent full",
+            "footerText": "~pISSS frame",
             "style": "1"
         }
     },

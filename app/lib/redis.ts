@@ -3,9 +3,9 @@ import type { Env } from "~/type/env";
 
 const redisClient = (env: Env) => Redis.fromEnv(env);
 
-export const incrCount = async (env: Env) => {
-	const redis = redisClient(env);
-	const key = `count`;
-	const value = await redis.incr(key);
-	return value;
+export const getPissStream = async (env: Env) => {
+  const redis = redisClient(env);
+  const key = "pISSStream";
+  const value = await redis.get(key);
+  return (value ?? 0) as number;
 };
