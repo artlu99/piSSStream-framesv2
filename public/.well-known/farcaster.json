@@ -7,11 +7,11 @@
         "frame": {
         "version": "0.0.1",
         "name": "pISSStream Frames v2",
-        "iconUrl": "https://pisss.artlu.xyz/icon.png",
+        "iconUrl": "https://pisss.artlu.xyz/icon-iss.png",
         "homeUrl": "https://pisss.artlu.xyz",
-        "imageUrl": "https://pisss.artlu.xyz/splash.png", 
+        "imageUrl": "https://pisss.artlu.xyz/splash-pISSS.png", 
         "buttonTitle": "see ISS telemetry",
-        "splashImageUrl": "https://pisss.artlu.xyz/splash.png", 
+        "splashImageUrl": "https://pisss.artlu.xyz/splash-pISSS.png", 
         "splashBackgroundColor": "#f7f7f7",
         "webhookUrl": "https://pisss.artlu.xyz/api/webhook"
     }

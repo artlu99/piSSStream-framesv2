@@ -17,14 +17,14 @@ export const meta: MetaFunction = () => {
   const frame = {
     version: "next",
     imageUrl:
-      config.dynamicOgImages && val ? ogImageUrl(val) : `${appUrl}/splash.png`,
+      config.dynamicOgImages && val ? ogImageUrl(val) : `${appUrl}/splash-pISSS.png`,
     button: {
       title: config.button.title,
       action: {
         type: "launch_frame",
         name: name,
         url: `${appUrl}/`,
-        splashImageUrl: `${appUrl}/splash.png`,
+        splashImageUrl: `${appUrl}/splash-pISSS.png`,
         splashBackgroundColor: "#f7f7f7",
       },
     },
@@ -35,7 +35,7 @@ export const meta: MetaFunction = () => {
     { description },
     { "og:title": title },
     { "og:type": "website" },
-    { "og:image": `${appUrl}/icon.png` },
+    { "og:image": `${appUrl}/icon-iss.png` },
     { "og:url": appUrl },
     { name: "fc:frame", content: JSON.stringify(frame) },
   ];
